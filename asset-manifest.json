@@ -1,23 +1,27 @@
 {
   "files": {
-    "main.css": "/wills-page/static/css/main.d1b05096.chunk.css",
-    "main.js": "/wills-page/static/js/main.20d8ad6e.chunk.js",
-    "main.js.map": "/wills-page/static/js/main.20d8ad6e.chunk.js.map",
+    "main.css": "/wills-page/static/css/main.694463a6.chunk.css",
+    "main.js": "/wills-page/static/js/main.cdd63f4a.chunk.js",
+    "main.js.map": "/wills-page/static/js/main.cdd63f4a.chunk.js.map",
     "runtime-main.js": "/wills-page/static/js/runtime-main.93c79861.js",
     "runtime-main.js.map": "/wills-page/static/js/runtime-main.93c79861.js.map",
-    "static/js/2.39513104.chunk.js": "/wills-page/static/js/2.39513104.chunk.js",
-    "static/js/2.39513104.chunk.js.map": "/wills-page/static/js/2.39513104.chunk.js.map",
+    "static/css/2.a9858c30.chunk.css": "/wills-page/static/css/2.a9858c30.chunk.css",
+    "static/js/2.0b4e5190.chunk.js": "/wills-page/static/js/2.0b4e5190.chunk.js",
+    "static/js/2.0b4e5190.chunk.js.map": "/wills-page/static/js/2.0b4e5190.chunk.js.map",
     "index.html": "/wills-page/index.html",
-    "precache-manifest.36dcaa458f4b989552fc9d2ffe46c440.js": "/wills-page/precache-manifest.36dcaa458f4b989552fc9d2ffe46c440.js",
+    "precache-manifest.5531e59a921dd74fa6ba54e804f862a7.js": "/wills-page/precache-manifest.5531e59a921dd74fa6ba54e804f862a7.js",
     "service-worker.js": "/wills-page/service-worker.js",
-    "static/css/main.d1b05096.chunk.css.map": "/wills-page/static/css/main.d1b05096.chunk.css.map",
-    "static/js/2.39513104.chunk.js.LICENSE": "/wills-page/static/js/2.39513104.chunk.js.LICENSE",
-    "static/media/logo.svg": "/wills-page/static/media/logo.5d5d9eef.svg"
+    "static/css/2.a9858c30.chunk.css.map": "/wills-page/static/css/2.a9858c30.chunk.css.map",
+    "static/css/main.694463a6.chunk.css.map": "/wills-page/static/css/main.694463a6.chunk.css.map",
+    "static/js/2.0b4e5190.chunk.js.LICENSE": "/wills-page/static/js/2.0b4e5190.chunk.js.LICENSE",
+    "static/media/App.css": "/wills-page/static/media/OpenSans-Light.2d0bdc8d.ttf",
+    "static/media/mountainsPurple.jpg": "/wills-page/static/media/mountainsPurple.c25bfd42.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.93c79861.js",
-    "static/js/2.39513104.chunk.js",
-    "static/css/main.d1b05096.chunk.css",
-    "static/js/main.20d8ad6e.chunk.js"
+    "static/css/2.a9858c30.chunk.css",
+    "static/js/2.0b4e5190.chunk.js",
+    "static/css/main.694463a6.chunk.css",
+    "static/js/main.cdd63f4a.chunk.js"
   ]
 }
