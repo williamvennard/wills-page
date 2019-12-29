@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/williamvennard/wills-page/static/css/main.d1b05096.chunk.css",
-    "main.js": "/williamvennard/wills-page/static/js/main.57f111a5.chunk.js",
-    "main.js.map": "/williamvennard/wills-page/static/js/main.57f111a5.chunk.js.map",
-    "runtime-main.js": "/williamvennard/wills-page/static/js/runtime-main.cb7ccf36.js",
-    "runtime-main.js.map": "/williamvennard/wills-page/static/js/runtime-main.cb7ccf36.js.map",
-    "static/js/2.39513104.chunk.js": "/williamvennard/wills-page/static/js/2.39513104.chunk.js",
-    "static/js/2.39513104.chunk.js.map": "/williamvennard/wills-page/static/js/2.39513104.chunk.js.map",
-    "index.html": "/williamvennard/wills-page/index.html",
-    "precache-manifest.eac8e918619789a61bccb1d9701889ce.js": "/williamvennard/wills-page/precache-manifest.eac8e918619789a61bccb1d9701889ce.js",
-    "service-worker.js": "/williamvennard/wills-page/service-worker.js",
-    "static/css/main.d1b05096.chunk.css.map": "/williamvennard/wills-page/static/css/main.d1b05096.chunk.css.map",
-    "static/js/2.39513104.chunk.js.LICENSE": "/williamvennard/wills-page/static/js/2.39513104.chunk.js.LICENSE",
-    "static/media/logo.svg": "/williamvennard/wills-page/static/media/logo.5d5d9eef.svg"
+    "main.css": "/wills-page/static/css/main.d1b05096.chunk.css",
+    "main.js": "/wills-page/static/js/main.20d8ad6e.chunk.js",
+    "main.js.map": "/wills-page/static/js/main.20d8ad6e.chunk.js.map",
+    "runtime-main.js": "/wills-page/static/js/runtime-main.93c79861.js",
+    "runtime-main.js.map": "/wills-page/static/js/runtime-main.93c79861.js.map",
+    "static/js/2.39513104.chunk.js": "/wills-page/static/js/2.39513104.chunk.js",
+    "static/js/2.39513104.chunk.js.map": "/wills-page/static/js/2.39513104.chunk.js.map",
+    "index.html": "/wills-page/index.html",
+    "precache-manifest.36dcaa458f4b989552fc9d2ffe46c440.js": "/wills-page/precache-manifest.36dcaa458f4b989552fc9d2ffe46c440.js",
+    "service-worker.js": "/wills-page/service-worker.js",
+    "static/css/main.d1b05096.chunk.css.map": "/wills-page/static/css/main.d1b05096.chunk.css.map",
+    "static/js/2.39513104.chunk.js.LICENSE": "/wills-page/static/js/2.39513104.chunk.js.LICENSE",
+    "static/media/logo.svg": "/wills-page/static/media/logo.5d5d9eef.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.cb7ccf36.js",
+    "static/js/runtime-main.93c79861.js",
     "static/js/2.39513104.chunk.js",
     "static/css/main.d1b05096.chunk.css",
-    "static/js/main.57f111a5.chunk.js"
+    "static/js/main.20d8ad6e.chunk.js"
   ]
 }
