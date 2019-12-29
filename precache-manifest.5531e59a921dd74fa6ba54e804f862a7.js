@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a5eedb3105c4b4e66cbba68e9561606b",
+    "revision": "fceaa1f32c858b945f6efcefae09cbc7",
     "url": "/wills-page/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/wills-page/static/css/2.a9858c30.chunk.css"
   },
   {
-    "revision": "19e5b4a9bf82e2646638",
+    "revision": "1f86c67d25b8e52b1146",
     "url": "/wills-page/static/css/main.694463a6.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/wills-page/static/js/2.0b4e5190.chunk.js.LICENSE"
   },
   {
-    "revision": "19e5b4a9bf82e2646638",
-    "url": "/wills-page/static/js/main.58be113d.chunk.js"
+    "revision": "1f86c67d25b8e52b1146",
+    "url": "/wills-page/static/js/main.cdd63f4a.chunk.js"
   },
   {
     "revision": "cbaefc49d90213d49f0a",
