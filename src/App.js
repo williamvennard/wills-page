@@ -45,20 +45,20 @@ function App() {
         <nav className="navbar header">
           <ul className="nav">
             <li className="nav-item">
-              <a href='/' className="item"> Home </a>
+              <a href='wills-page/' className="item"> Home </a>
             </li>
             <li className="nav-item">
-              <a href='/#projects' className="item"> Projects </a>
+              <a href='wills-page/#projects' className="item"> Projects </a>
             </li>
             <li className="nav-item">
-              <a href='/#about' className="item"> About Me </a>
+              <a href='wills-page/#about' className="item"> About Me </a>
             </li>
           </ul>
         </nav>
 
-        <Route path="/snake" component={Snake} />
+        <Route path="wills-page/snake" component={Snake} />
 
-        <Route exact path="/" component={MainContent} />
+        <Route exact path="wills-page/" component={MainContent} />
       
         <Footer></Footer>
       </div>
