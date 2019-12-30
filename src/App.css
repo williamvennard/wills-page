@@ -22,7 +22,15 @@ h1 {
 }
 
 .container-fluid {
-  background-color: #272872d1
+  padding: 20px;
+}
+
+.project-container {
+  background-color: #131849;
+}
+
+.about-container {
+  background-color: #262626;
 }
 
 .header {
@@ -45,11 +53,12 @@ h1 {
 
 .home-section {
   background-color: rgba(0,0,0,0.1);
+  border-radius: 5px;
   width: 355px;
   color: white;
   margin: auto;
   text-align: center;
-  margin-top: 150px;
+  margin-top: 125px;
   margin-bottom: 250px;
   padding: 25px;
 }
@@ -63,8 +72,14 @@ h1 {
   padding: 10px;
 }
 
+.game-intro {
+  fill: white;
+  text-anchor: middle;
+}
+
 #end-text {
   position: relative;
+  color: white;
   top: -180px;
 }
 
@@ -73,7 +88,7 @@ h1 {
 }
 
 #board {
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0,0,0,0.8);
 }
 
 #score {
@@ -81,14 +96,19 @@ h1 {
 }
 
 .snake-container {
+  color: black;
   min-height: 600px;
   text-align: center;
+  background-color: #e5e5e5;
 }
 
 .snake-container h1 {
   padding-top: 20px;
 }
 
+#pause-game {
+  display: none;
+}
 /*END SNAKE GAME CSS*/
 
 .footer {
@@ -100,7 +120,12 @@ h1 {
   text-align: center;
   border-top: solid black 2px;
   background-color: #191B58;
-  
+}
+
+#copyright {
+  font-size: 80%;
+  color: gray;
+  margin-top: 10px;
 }
 
 .socialIcon path{
@@ -116,7 +141,18 @@ h1 {
   opacity: 0.6;
 }
 
-.project-title{
+.project-title {
   font-family: Open-Sans-Bold;
   color: white;
+}
+
+.project-image img{
+  height: 360px;
+  margin: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .project-image img{
+    height: 260px;
+  }
 }

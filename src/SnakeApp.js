@@ -38,6 +38,7 @@ class SnakeGame {
   // Might be a better way to do this.
   // put into another class and simply reset?
   initGame() {
+    d3.selectAll(".game-intro").remove();
     d3.select('#score').style("display", "block")
     d3.select('#start-game').style("display", "none")
     d3.select('#board').remove();
@@ -72,6 +73,9 @@ class SnakeGame {
     // do this with d3
     d3.select('#score-count')
       .text(this.score)
+
+    d3.select('#pause-game')
+      .style("display", "block")
 
     this.spawnFood();
     this.gameTick();
@@ -149,7 +153,6 @@ class SnakeGame {
       .remove();
 
     d3.select('#end-text').remove();
-      
     d3.select('#game-space')
       .append('h3')
       .text('GAME OVER')
@@ -159,12 +162,18 @@ class SnakeGame {
       .duration(1000)
       .style("opacity", 1)
 
+    d3.select('#pause-game')
+      .style("display", "none")
+
     d3.select('#start-game')
       .style("display", "block")
       
   }
 
   gameTick() {
+    if(this.paused) {
+      return
+    }
     this.count++;
     if(this.snakeDirection === 'ArrowLeft') {
       this.headCord[0] = this.headCord[0] - this.segmentDim;
@@ -391,4 +400,14 @@ let snakeGame = new SnakeGame();
 export function startSnakeGame() {
   console.log('startSnakeGame: Start game!!')
   snakeGame.initGame()
+}
+
+export function pauseSnakeGame() {
+  if (snakeGame.paused) {
+    snakeGame.paused = false;
+    snakeGame.gameTick();
+  } else {
+    snakeGame.paused = true;
+  }
+
 }

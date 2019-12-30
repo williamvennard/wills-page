@@ -7,7 +7,7 @@ function Footer(props) {
       <footer className="footer">
 	      <div className="row">
 	        <div className="col-md-2">
-	          <p>&copy;2020 William Vennard</p>
+	          <span id="copyright">&copy;2020 William Vennard</span>
 	        </div>
 	        <div className="col-md-3"></div>
 	        <div className="col-md-1">

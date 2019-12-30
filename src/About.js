@@ -3,7 +3,7 @@ import './App.css';
  
 function About(props) {
   return (
-    <div className="container-fluid">
+    <div className="container-fluid about-container">
       <h1>About Me</h1>
 
 	    <p>Hello there, welcome to my website!</p>

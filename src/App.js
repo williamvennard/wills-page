@@ -49,17 +49,15 @@ function App() {
               <Link to="/" className="item">Home</Link>
             </li>
             <li className="nav-item">
-              <Link to="#projects" className="item">Projects</Link>
+              <Link to="/#projects" className="item">Projects</Link>
             </li>
             <li className="nav-item">
-              <Link to="#about" className="item">About</Link>
+              <Link to="/#about" className="item">About</Link>
             </li>
           </ul>
         </nav>
-
-        <Route exact path="/"  component={MainContent} />
         <Route path="/snake"  component={Snake} />
-        
+        <Route exact path="/"  component={MainContent} />
         
         <Footer></Footer>
       </div>
