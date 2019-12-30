@@ -43,24 +43,24 @@ class PauseGame extends React.Component {
 
 function Snake(props) {
   return (
-    <div className="container-fluid snake-container">
+    <div className="container-fluid snake-container" id="snake-game">
     	<div className="row">
 	      <div className="col-sm">
 	      	<h1>Snake</h1>
 		      <div id="game-space">
 		      	<svg id="board" width="300px" height="300px">
-		      		<text class="game-intro" 
+		      		<text className="game-intro" 
 		      					dx="150px" 
 		      					dy="5em">
 		      			Use the arrow keys,
 		      		</text>
-		      		<text class="game-intro" 
+		      		<text className="game-intro" 
 		      					dx="150px" 
 		      					dy="7em">
 		      			eat green apples,
 		      		</text>
-		      		<text class="game-intro" 
-		      					dx="150px" 
+		      		<text className="game-intro" 
+		      			  	dx="150px" 
 		      					dy="9em">
 		      			and avoid the bombs!!
 		      		</text>

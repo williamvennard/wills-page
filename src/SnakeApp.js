@@ -5,13 +5,41 @@ function initKeyBindings () {
   document.addEventListener('keydown', (event) => {
     if(event.key === 'ArrowLeft' || event.key === 'ArrowUp' || event.key === 'ArrowRight' || event.key === 'ArrowDown') {
       event.preventDefault();
-      if (snakeGame.snakeDirection === 'ArrowLeft' && event.key === 'ArrowRight') { return }
-      if (snakeGame.snakeDirection === 'ArrowRight' && event.key === 'ArrowLeft') { return }
-      if (snakeGame.snakeDirection === 'ArrowUp' && event.key === 'ArrowDown') { return }
-      if (snakeGame.snakeDirection === 'ArrowDown' && event.key === 'ArrowUp') { return }
-      snakeGame.snakeDirection = event.key;
+      snakeGame.snakeDirection = directionHelper(event.key)
     }
   });
+  document.addEventListener("touchstart", touchHandler);
+}
+
+// makes sure you cant double back on yourself
+function directionHelper(direction) {
+  if (snakeGame.snakeDirection === 'ArrowLeft' && direction === 'ArrowRight') { return snakeGame.snakeDirection }
+  if (snakeGame.snakeDirection === 'ArrowRight' && direction === 'ArrowLeft') { return snakeGame.snakeDirection }
+  if (snakeGame.snakeDirection === 'ArrowUp' && direction=== 'ArrowDown') { return snakeGame.snakeDirection }
+  if (snakeGame.snakeDirection === 'ArrowDown' && direction === 'ArrowUp') { return snakeGame.snakeDirection }
+    return direction
+}
+
+// for mobile devices
+function touchHandler(e) {
+  e.preventDefault();
+  if(e.touches) {
+    let width = e.view.innerWidth;
+    let height = e.view.innerHeight;
+    let x = e.touches[0].pageX 
+    let y = e.touches[0].pageY 
+    let direction;
+    if (x<width/3) {
+      direction = 'ArrowLeft';
+    } else if (x>(width - width/3)) {
+      direction = 'ArrowRight';
+    } else if (y<height/3) {
+      direction = 'ArrowUp';
+    } else {
+      direction = 'ArrowDown';
+    }
+    snakeGame.snakeDirection = directionHelper(direction)
+  }
 }
 
 class SnakeGame {
