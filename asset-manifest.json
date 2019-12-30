@@ -1,27 +1,28 @@
 {
   "files": {
-    "main.css": "/wills-page/static/css/main.694463a6.chunk.css",
-    "main.js": "/wills-page/static/js/main.7e351834.chunk.js",
-    "main.js.map": "/wills-page/static/js/main.7e351834.chunk.js.map",
+    "main.css": "/wills-page/static/css/main.3c251ea2.chunk.css",
+    "main.js": "/wills-page/static/js/main.d67cd2ef.chunk.js",
+    "main.js.map": "/wills-page/static/js/main.d67cd2ef.chunk.js.map",
     "runtime-main.js": "/wills-page/static/js/runtime-main.93c79861.js",
     "runtime-main.js.map": "/wills-page/static/js/runtime-main.93c79861.js.map",
     "static/css/2.a9858c30.chunk.css": "/wills-page/static/css/2.a9858c30.chunk.css",
-    "static/js/2.872947ac.chunk.js": "/wills-page/static/js/2.872947ac.chunk.js",
-    "static/js/2.872947ac.chunk.js.map": "/wills-page/static/js/2.872947ac.chunk.js.map",
+    "static/js/2.cdf42525.chunk.js": "/wills-page/static/js/2.cdf42525.chunk.js",
+    "static/js/2.cdf42525.chunk.js.map": "/wills-page/static/js/2.cdf42525.chunk.js.map",
     "index.html": "/wills-page/index.html",
-    "precache-manifest.c30ca92a51447f34e65fe3ea9233bd45.js": "/wills-page/precache-manifest.c30ca92a51447f34e65fe3ea9233bd45.js",
+    "precache-manifest.213b8e3a9a8e9be91364ec3dff94c54f.js": "/wills-page/precache-manifest.213b8e3a9a8e9be91364ec3dff94c54f.js",
     "service-worker.js": "/wills-page/service-worker.js",
     "static/css/2.a9858c30.chunk.css.map": "/wills-page/static/css/2.a9858c30.chunk.css.map",
-    "static/css/main.694463a6.chunk.css.map": "/wills-page/static/css/main.694463a6.chunk.css.map",
-    "static/js/2.872947ac.chunk.js.LICENSE": "/wills-page/static/js/2.872947ac.chunk.js.LICENSE",
+    "static/css/main.3c251ea2.chunk.css.map": "/wills-page/static/css/main.3c251ea2.chunk.css.map",
+    "static/js/2.cdf42525.chunk.js.LICENSE": "/wills-page/static/js/2.cdf42525.chunk.js.LICENSE",
     "static/media/App.css": "/wills-page/static/media/OpenSans-Light.2d0bdc8d.ttf",
-    "static/media/mountainsPurple.jpg": "/wills-page/static/media/mountainsPurple.c25bfd42.jpg"
+    "static/media/mountainsPurple.jpg": "/wills-page/static/media/mountainsPurple.c25bfd42.jpg",
+    "static/media/snakeProject.png": "/wills-page/static/media/snakeProject.f5fe54ec.png"
   },
   "entrypoints": [
     "static/js/runtime-main.93c79861.js",
     "static/css/2.a9858c30.chunk.css",
-    "static/js/2.872947ac.chunk.js",
-    "static/css/main.694463a6.chunk.css",
-    "static/js/main.7e351834.chunk.js"
+    "static/js/2.cdf42525.chunk.js",
+    "static/css/main.3c251ea2.chunk.css",
+    "static/js/main.d67cd2ef.chunk.js"
   ]
 }
