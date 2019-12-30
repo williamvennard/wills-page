@@ -3,8 +3,8 @@ import './App.css';
 
 function Home(props) {
   return (
-    <div className="home-section">
-      <h1>William Vennard</h1>
+    <div className="col-6 home-section">
+      <h1>Hi, I'm William Vennard</h1>
       <h2>Web Developer & Mechanical Engineer</h2>
     </div>
   )

@@ -8,18 +8,15 @@ function About(props) {
 
 	    <p>Hello there, welcome to my website!</p>
 	    <p>
-	      A little bit about myself; I grew up in Madison WI, went to the University of Colorado Boulder 
-	      to study Mechanical Engineering, and after graduating joined a start-up from San Francisco where 
-	      I have been doing Web Development ever since. 
-	    </p> 
-	    <p>
-	    	I am currently a Web Developer at GradentOne, where for the past few years, I've been 
-	      lucky enough to help build their product from the ground up. GradientOne's is a test automation 
-	      cloud platform with a web browser interface and a robust API for those who like to dig deeper. 
-	      GradientOne enables test engineers to do asset utilization tracking, hardware test automation, 
-	      test data acquisition and archiving and much more. Click the link below to learn more. 
+	      A little bit about myself; I grew up in Madison WI, went to the University of Colorado Boulder to study Mechanical Engineering, and after graduating started working for GradientOne, a start-up from San Francisco where I have been a Web Developer ever since. I currently live in Lake Tahoe California.  
 	    </p>
-	    <a href="https://www.gradientone.com/">Go to GradientOne.com</a>
+	    <p>
+	    	The tools I like to use are: Angular, React, D3, and Bootstrap.
+	    </p>
+	    <p>
+	    	For more information about GradientOne click <a href="https://www.gradientone.com/">here</a>.
+	    </p>
+	    
 
     </div>
   )

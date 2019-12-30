@@ -54,7 +54,7 @@ h1 {
 .home-section {
   background-color: rgba(0,0,0,0.1);
   border-radius: 5px;
-  width: 355px;
+  /*width: 400px;*/
   color: white;
   margin: auto;
   text-align: center;
