@@ -7,8 +7,7 @@ import ScrollableAnchor from 'react-scrollable-anchor';
 import Background from './mountainsPurple.jpg';
 import Home from './Home.js';
 import Projects from './Projects.js'; 
-import Snake from './Snake.js'; 
-import D3Plot from './D3Plot.js'
+import Snake from './Snake.js';
 import About from './About.js'; 
 import Footer from './Footer.js';
 import './App.css';
@@ -58,7 +57,6 @@ function App() {
           </ul>
         </nav>
         <Route path="/snake"  component={Snake} />
-        <Route path="/d3plot"  component={D3Plot} />
         <Route exact path="/"  component={MainContent} />
         
         <Footer></Footer>
