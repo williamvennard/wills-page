@@ -11,22 +11,12 @@ function Projects(props) {
     	<div className="row">
 		    <div className="col-sm">
 		      <Thumbnail
-			  		link="/twitter"
-			  		image="http://via.placeholder.com/500x360"
+			  		link="/d3plot"
+			  		image="http://via.placeholder.com/400x360"
 			  		title="Interactive D3 Plot"
 			  		category="Data Visualization"
 					/>
 		    </div>
-		    <div className="col-sm">
-		      <Thumbnail
-			  		link="/airbnb"
-			  		image="http://via.placeholder.com/500x360"
-			  		title="Daft Punk Speaker"
-			  		category="Hobby"
-					/>
-		    </div>
-		  </div>
-		  <div className="row">
 		    <div className="col-sm">
 		      <Thumbnail
 			  		link="/snake"

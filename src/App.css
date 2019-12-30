@@ -123,6 +123,7 @@ h1 {
 }
 
 #copyright {
+  text-align: left;
   font-size: 80%;
   color: gray;
   margin-top: 10px;
@@ -154,5 +155,14 @@ h1 {
 @media only screen and (max-width: 600px) {
   .project-image img{
     height: 260px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .project-image img{
+    height: 160px;
+  }
+  #copyright {
+    display: none;
   }
 }
