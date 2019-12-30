@@ -58,7 +58,7 @@ function App() {
 
         <Route path="/snake" component={Snake} />
 
-        <Route exact path="/" component={MainContent} />
+        <Route path="/" component={MainContent} />
       
         <Footer></Footer>
       </div>
