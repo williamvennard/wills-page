@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fbb84aaa191a83d73ce22fa91c2ca2ac",
+    "revision": "ef795743c53fbec21c3ad9d19cf394f2",
     "url": "/wills-page/index.html"
   },
   {
-    "revision": "7c260300870695ab193f",
+    "revision": "44e126f4313d7a759963",
     "url": "/wills-page/static/css/2.a9858c30.chunk.css"
   },
   {
-    "revision": "248a90d73432722c9f89",
+    "revision": "c75311bc88989e2264d7",
     "url": "/wills-page/static/css/main.694463a6.chunk.css"
   },
   {
-    "revision": "7c260300870695ab193f",
-    "url": "/wills-page/static/js/2.0b4e5190.chunk.js"
+    "revision": "44e126f4313d7a759963",
+    "url": "/wills-page/static/js/2.872947ac.chunk.js"
   },
   {
     "revision": "c2ca14468f78f908c37847bb4ba35cc2",
-    "url": "/wills-page/static/js/2.0b4e5190.chunk.js.LICENSE"
+    "url": "/wills-page/static/js/2.872947ac.chunk.js.LICENSE"
   },
   {
-    "revision": "248a90d73432722c9f89",
-    "url": "/wills-page/static/js/main.dcbe2ee7.chunk.js"
+    "revision": "c75311bc88989e2264d7",
+    "url": "/wills-page/static/js/main.7e351834.chunk.js"
   },
   {
     "revision": "cbaefc49d90213d49f0a",
