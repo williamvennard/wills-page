@@ -1,7 +1,8 @@
 import React from 'react';
 
-// Import the BrowserRouter, Route and Link components
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+// Import the HashRouter, Route and Link components
+// HashRouter is needed in order to be hosted on github
+import { HashRouter, Route, Link } from 'react-router-dom';
 import ScrollableAnchor from 'react-scrollable-anchor';
 import Background from './mountainsPurple.jpg';
 import Home from './Home.js';
@@ -23,13 +24,13 @@ function MainContent() {
     <div>
       <Home></Home>
         
-      <ScrollableAnchor id={'projects'}>
+      <ScrollableAnchor id={'/#projects'}>
         <div>
           <Projects/>
         </div>
       </ScrollableAnchor>
 
-      <ScrollableAnchor id={'about'}>
+      <ScrollableAnchor id={'/#about'}>
         <div>
           <About/>
         </div>
@@ -40,29 +41,29 @@ function MainContent() {
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter basename='/'>
       <div className="App" style={ backgroundStyle }>
         <nav className="navbar header">
           <ul className="nav">
             <li className="nav-item">
-              <a href='/' className="item"> Home </a>
+              <Link to="/" className="item">Home</Link>
             </li>
             <li className="nav-item">
-              <a href='/#projects' className="item"> Projects </a>
+              <Link to="#projects" className="item">Projects</Link>
             </li>
             <li className="nav-item">
-              <a href='/#about' className="item"> About Me </a>
+              <Link to="#about" className="item">About</Link>
             </li>
           </ul>
         </nav>
 
-        <Route path="/snake" component={Snake} />
-
-        <Route exact path="/" component={MainContent} />
-      
+        <Route exact path="/"  component={MainContent} />
+        <Route path="/snake"  component={Snake} />
+        
+        
         <Footer></Footer>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
