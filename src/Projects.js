@@ -27,12 +27,21 @@ function Projects(props) {
 			  		externalLink = "false"
 					/>
 		    </div>
+
+		  </div>
+		  <div className="row">
+		  	<div className="col-sm">
+		      <Thumbnail
+			  		link="/planit"
+			  		image="https://via.placeholder.com/300.png/09f/fff"
+			  		title="Planit Project"
+			  		category="Travel app using Google API"
+			  		externalLink = "false"
+					/>
+		    </div>
 		  </div>
 
-      
 
-      
-			
 	 
     </div>
   )
