@@ -11,7 +11,7 @@ class Content extends React.Component {
     return (
       <div>
         <div className="project-image">
-          <img src={this.props.props.image} alt="Project Image"/>
+          <img src={this.props.props.image} alt="Project Thumbnail"/>
         </div>
         <div className="project-title">{this.props.props.title}</div>
         <div className="project-category">{this.props.props.category}</div>

@@ -3,12 +3,11 @@ import './App.css';
 // Google maps api key AIzaSyAQnnrSxmjA4pPJuFsiSUBjZ0gL0Uq9D7Q
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 
-
 import CurrentLocation from './Map';
 
-const mapStyles = {
+const containerStyles = {
   width: '100%',
-  height: '100%'
+  height: window.screen.height
 };
 
 export class MapContainer extends Component {
@@ -36,21 +35,26 @@ export class MapContainer extends Component {
 
   render() {
     return (
-      <CurrentLocation
-        centerAroundCurrentLocation
-        google={this.props.google}
-      >
-        <Marker onClick={this.onMarkerClick} name={'current location'} />
-        <InfoWindow
-          marker={this.state.activeMarker}
-          visible={this.state.showingInfoWindow}
-          onClose={this.onClose}
-        >
-          <div>
-            <h4>{this.state.selectedPlace.name}</h4>
-          </div>
-        </InfoWindow>
-      </CurrentLocation>
+      <div className="container-fluid" style={containerStyles}>
+        <h2>Planit</h2>
+        <div className="row">
+          <CurrentLocation
+            centerAroundCurrentLocation
+            google={this.props.google}
+          >
+            <Marker onClick={this.onMarkerClick} name={'current location'} />
+            <InfoWindow
+              marker={this.state.activeMarker}
+              visible={this.state.showingInfoWindow}
+              onClose={this.onClose}
+            >
+              <div>
+                <h4>{this.state.selectedPlace.name}</h4>
+              </div>
+            </InfoWindow>
+          </CurrentLocation>
+        </div>
+      </div>
     );
   }
 }
