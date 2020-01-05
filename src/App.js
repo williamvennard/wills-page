@@ -57,9 +57,9 @@ function App() {
             </li>
           </ul>
         </nav>
-        <Route path="/snake"  component={Snake} />
-        <Route path="/planit"  component={Planit} />
-        <Route exact path="/"  component={MainContent} />
+        <Route path="/snake"  component={ Snake } />
+        <Route path="/planit"  component={ Planit } />
+        <Route exact path="/"  component={ MainContent } />
         
         <Footer></Footer>
       </div>
