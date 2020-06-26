@@ -4,27 +4,30 @@ import React from 'react';
 // HashRouter is needed in order to be hosted on github
 import { HashRouter, Route, Link } from 'react-router-dom';
 import ScrollableAnchor from 'react-scrollable-anchor';
-import Background from './mountainsPurple.jpg';
+
+// import Background from './images/water-background.jpg';
+// import Background from './images/red-fish.jpg';
+
 import Home from './Home.js';
-import Projects from './Projects.js'; 
+import Projects from './Projects.js';
 import Snake from './Snake.js';
 import Planit from './Planit.js';
-import About from './About.js'; 
+import About from './About.js';
 import Footer from './Footer.js';
 import './App.css';
 
 
 let backgroundStyle = {
-  backgroundImage: `url(${Background})`,
+  // backgroundImage: `url(${Background})`,
   backgroundAttachment: 'fixed',
-  backgroundSize: 'cover'
+  backgroundSize: `100%`
 };
 
 function MainContent() {
   return (
     <div>
       <Home></Home>
-        
+
       <ScrollableAnchor id={'/#projects'}>
         <div>
           <Projects/>
@@ -60,7 +63,7 @@ function App() {
         <Route path="/snake"  component={ Snake } />
         <Route path="/planit"  component={ Planit } />
         <Route exact path="/"  component={ MainContent } />
-        
+
         <Footer></Footer>
       </div>
     </HashRouter>
