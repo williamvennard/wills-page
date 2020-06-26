@@ -1,29 +1,31 @@
 {
   "files": {
-    "main.css": "/wills-page/static/css/main.fb6ef5b5.chunk.css",
-    "main.js": "/wills-page/static/js/main.0b8594f9.chunk.js",
-    "main.js.map": "/wills-page/static/js/main.0b8594f9.chunk.js.map",
+    "main.css": "/wills-page/static/css/main.6cf3dfe5.chunk.css",
+    "main.js": "/wills-page/static/js/main.bdb31106.chunk.js",
+    "main.js.map": "/wills-page/static/js/main.bdb31106.chunk.js.map",
     "runtime-main.js": "/wills-page/static/js/runtime-main.93c79861.js",
     "runtime-main.js.map": "/wills-page/static/js/runtime-main.93c79861.js.map",
-    "static/css/2.a9858c30.chunk.css": "/wills-page/static/css/2.a9858c30.chunk.css",
-    "static/js/2.3edebd6f.chunk.js": "/wills-page/static/js/2.3edebd6f.chunk.js",
-    "static/js/2.3edebd6f.chunk.js.map": "/wills-page/static/js/2.3edebd6f.chunk.js.map",
+    "static/css/2.cff28e81.chunk.css": "/wills-page/static/css/2.cff28e81.chunk.css",
+    "static/js/2.eeefa6cb.chunk.js": "/wills-page/static/js/2.eeefa6cb.chunk.js",
+    "static/js/2.eeefa6cb.chunk.js.map": "/wills-page/static/js/2.eeefa6cb.chunk.js.map",
     "index.html": "/wills-page/index.html",
-    "precache-manifest.432070d0fe2f6271213251db9dfb0d6e.js": "/wills-page/precache-manifest.432070d0fe2f6271213251db9dfb0d6e.js",
+    "precache-manifest.696e83ebc0eeabf7278a19c18db618da.js": "/wills-page/precache-manifest.696e83ebc0eeabf7278a19c18db618da.js",
     "service-worker.js": "/wills-page/service-worker.js",
-    "static/css/2.a9858c30.chunk.css.map": "/wills-page/static/css/2.a9858c30.chunk.css.map",
-    "static/css/main.fb6ef5b5.chunk.css.map": "/wills-page/static/css/main.fb6ef5b5.chunk.css.map",
-    "static/js/2.3edebd6f.chunk.js.LICENSE": "/wills-page/static/js/2.3edebd6f.chunk.js.LICENSE",
-    "static/media/GradientOnePlot.png": "/wills-page/static/media/GradientOnePlot.a3224cd9.png",
-    "static/media/App.css": "/wills-page/static/media/OpenSans-Light.2d0bdc8d.ttf",
-    "static/media/mountainsPurple.jpg": "/wills-page/static/media/mountainsPurple.c25bfd42.jpg",
-    "static/media/snakeProject.png": "/wills-page/static/media/snakeProject.f5fe54ec.png"
+    "static/css/2.cff28e81.chunk.css.map": "/wills-page/static/css/2.cff28e81.chunk.css.map",
+    "static/css/main.6cf3dfe5.chunk.css.map": "/wills-page/static/css/main.6cf3dfe5.chunk.css.map",
+    "static/js/2.eeefa6cb.chunk.js.LICENSE": "/wills-page/static/js/2.eeefa6cb.chunk.js.LICENSE",
+    "static/media/App.css": "/wills-page/static/media/OpenSans-Regular.3ed9575d.ttf",
+    "static/media/airplane.jpg": "/wills-page/static/media/airplane.a65cfd90.jpg",
+    "static/media/blue-man.jpg": "/wills-page/static/media/blue-man.615a2609.jpg",
+    "static/media/gradient-one-plot.png": "/wills-page/static/media/gradient-one-plot.a3224cd9.png",
+    "static/media/snake-project.png": "/wills-page/static/media/snake-project.f5fe54ec.png",
+    "static/media/travel-plan.jpg": "/wills-page/static/media/travel-plan.ae84d7db.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.93c79861.js",
-    "static/css/2.a9858c30.chunk.css",
-    "static/js/2.3edebd6f.chunk.js",
-    "static/css/main.fb6ef5b5.chunk.css",
-    "static/js/main.0b8594f9.chunk.js"
+    "static/css/2.cff28e81.chunk.css",
+    "static/js/2.eeefa6cb.chunk.js",
+    "static/css/main.6cf3dfe5.chunk.css",
+    "static/js/main.bdb31106.chunk.js"
   ]
 }
