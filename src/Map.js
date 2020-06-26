@@ -4,7 +4,7 @@ import { withGoogleMap, GoogleMap, withScriptjs, InfoWindow, Marker } from "reac
 import Autocomplete from 'react-google-autocomplete';
 import Geocode from "react-geocode";
 // import SearchBox from "react-google-maps/lib/components/places/SearchBox";
-Geocode.setApiKey("AIzaSyAb__W3DvdpBLKSoN6AuMzNZtcrcurvK0I");
+Geocode.setApiKey("");
 Geocode.enableDebug();
 
 
@@ -54,7 +54,7 @@ class Map extends React.Component{
       console.warn("Browser doesn't support Geolocation")
     }
 
-    
+
   };
 
   next() {
@@ -66,7 +66,7 @@ class Map extends React.Component{
         area = this.getArea( addressArray ),
         state = this.getState( addressArray );
         console.log( 'city', city, area, state );
-    
+
         this.setState( {
           address: ( address ) ? address : '',
           area: ( area ) ? area : '',
@@ -234,10 +234,10 @@ class Map extends React.Component{
             defaultZoom={ this.props.zoom }
             defaultCenter={{ lat: this.state.mapPosition.lat, lng: this.state.mapPosition.lng }}
           >
-            
-            
 
-            <Marker 
+
+
+            <Marker
               google={ this.props.google }
               name={'Dolores park'}
               draggable={true}

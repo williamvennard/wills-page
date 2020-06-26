@@ -18,7 +18,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
 const PlacesWithStandaloneSearchBox = compose(
   withProps({
     googleMapURL:
-      "https://maps.googleapis.com/maps/api/js?key=AIzaSyAb__W3DvdpBLKSoN6AuMzNZtcrcurvK0I&v=3.exp&libraries=geometry,drawing,places",
+      "",
     loadingElement: <div style={{ height: `100%` }} />,
     containerElement: <div style={{ height: `400px` }} />
   }),
@@ -26,7 +26,7 @@ const PlacesWithStandaloneSearchBox = compose(
     componentWillMount() {
       const refs = {};
       this.showPosition = (position) => {
-        const places = [];  
+        const places = [];
         const firstPlace = {};
         const firstPlaceLat = position.coords.latitude;
         const firstPlaceLng = position.coords.longitude;
@@ -53,9 +53,9 @@ const PlacesWithStandaloneSearchBox = compose(
           refs.searchBox = ref;
           this.getCurrentLocation();
         },
-       
+
         onPlacesChanged: () => {
-          const places = refs.searchBox.getPlaces();      
+          const places = refs.searchBox.getPlaces();
           const firstPlace = places[0];
           const firstPlaceLat = firstPlace.geometry.location.lat()
           const firstPlaceLng = firstPlace.geometry.location.lng()
@@ -65,7 +65,7 @@ const PlacesWithStandaloneSearchBox = compose(
         }
       });
 
-    }    
+    }
   }),
   withScriptjs
 )(props => (
@@ -100,7 +100,7 @@ const PlacesWithStandaloneSearchBox = compose(
       }
       mapElement={
         <div style={{ height: `100%` }} />
-      }    
+      }
       loadingElement={
         <div style={{ height: `100%` }} />
       }
@@ -149,9 +149,9 @@ export class MapContainer extends Component {
           <div className="col-8">
             <h2> Planit - The best way to plan your next adventure. </h2>
             <p>
-              Plan a trip from a, b, c and decide how long you want to spend in each spot 
-              to generate an itinerary. Planit will show you transportation, lodging and 
-              possible points of interest in the areas of travel including an estimated price 
+              Plan a trip from a, b, c and decide how long you want to spend in each spot
+              to generate an itinerary. Planit will show you transportation, lodging and
+              possible points of interest in the areas of travel including an estimated price
               breakdown. Select the desired options and finalize your itinerary and you’re on your way!
             </p>
           </div>
@@ -160,7 +160,7 @@ export class MapContainer extends Component {
           <div className="col-2"></div>
           <div className="col-8">
             <PlacesWithStandaloneSearchBox/>
-          </div>  
+          </div>
         </div>
       </div>
     );

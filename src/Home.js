@@ -15,25 +15,49 @@ class LoadAnimation extends React.Component {
             'sunrise': ['#F94144', '#F3722C', '#F8961E', '#F9C74F', '#90BE6D', '#43AA8B', '#577590']
         }
         this.squareDim = {};
-        this.numberOfDivistions = 40;
+        this.numberOfDivistions = 30;
         // only for this.numberOfDivistions = 40;
         this.patterns = {
-            'space_invader': {
+            'space_invader_40': {
                 'frames':[
-                    [657, 663, 698, 702,
+                    [657, 663,
+                    698, 702,
                     737, 738, 739, 740, 741, 742, 743,
                     776, 777, 779, 780, 781, 783, 784,
                     815, 816, 817, 818, 819, 820, 821, 822, 823, 824, 825,
                     855, 857, 858, 859, 860, 861, 862, 863, 865,
                     895, 897, 903, 905,
                     938, 939, 941, 942],
-                    [657, 663, 695, 698, 702, 705,
+
+                    [657, 663,
+                    695, 698, 702, 705,
                     735, 737, 738, 739, 740, 741, 742, 743, 745,
                     775, 776, 777, 779, 780, 781, 783, 784, 785,
                     815, 816, 817, 818, 819, 820, 821, 822, 823, 824, 825,
                     856, 857, 858, 859, 860, 861, 862, 863, 864,
                     897, 903,
                     936, 944]
+                ]
+            },
+            'space_invader_30': {
+                'frames':[
+                    [342, 348,
+                    373, 377,
+                    402, 403, 404, 405, 406, 407, 408,
+                    431, 432, 434, 435, 436, 438, 439,
+                    460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 470,
+                    490, 492, 493, 494, 495, 496, 497, 498, 500,
+                    520, 522, 528, 530,
+                    553, 554, 556, 557],
+
+                    [342, 348,
+                    370, 373, 377, 380,
+                    400, 402, 403, 404, 405, 406, 407, 408, 410,
+                    430, 431, 432, 434, 435, 436, 438, 439, 440,
+                    460, 461, 462, 463, 464,465, 466, 467, 468, 469, 470,
+                    491, 492, 493, 494, 495, 496, 497, 498, 499,
+                    522, 528,
+                    551, 559],
                 ]
             }
         }
@@ -67,7 +91,6 @@ class LoadAnimation extends React.Component {
                 this.data.push(square)
             }
         }
-        console.warn("DEBUG DEBUG generateDataPoints: this.data = ", this.data)
     }
 
     mouseoverAnimation(i, isRipple) {
@@ -118,19 +141,19 @@ class LoadAnimation extends React.Component {
             .attr("fill", this.colorPallet[randomColorIdx])
     }
 
-    drawMosaic(pattern, frameIndex, flyIn) {
+    drawMosaic(pattern, frameIndex, onLoad) {
+        d3.selectAll(".mosaic").remove();
         let frame = pattern.frames[frameIndex];
         let svg = d3.select('#animationSVG');
-        d3.selectAll('.mosaic').remove();
         for(let squareIdx of frame) {
             let rect = this.data[squareIdx];
+            if(rect === undefined) {return}
             let random = Math.random();
             // let rect = d3.select("#rect"+squareIdx).style("opacity", 1)
             // rect.style("fill", "black")
             //     .style("opacity", 0.5)
-
-            if(flyIn) {
-                setTimeout(() => {
+            if(onLoad) {
+                // setTimeout(() => {
                     svg.append('rect')
                         .attr('class', 'mosaic')
                         .attr("x", Math.floor(Math.random() * this.svgWidth))
@@ -144,7 +167,7 @@ class LoadAnimation extends React.Component {
                         .attr("x", rect.x2)
                         .attr("y", rect.y2)
                         .style("opacity", 1)
-                 }, 100);
+                // }, 100);
             } else {
                 svg.append('rect')
                     .attr('class', 'mosaic')
@@ -153,8 +176,8 @@ class LoadAnimation extends React.Component {
                     .attr("width", this.squareDim.width)
                     .attr("height", this.squareDim.width)
                     .attr('fill', 'black')
-            }
 
+            }
 
         }
     }
@@ -163,8 +186,6 @@ class LoadAnimation extends React.Component {
         let that = this;
         let curIndex = 0;
         function advancePatternFrame(pattern, that) {
-            console.warn("advancePatternFrame: pattern", pattern)
-            console.warn("advancePatternFrame: curIndex ", curIndex)
             if (curIndex >= pattern.frames.length) {
                 curIndex = 0;
             }
@@ -174,33 +195,24 @@ class LoadAnimation extends React.Component {
         let intervalID = setInterval(function(){advancePatternFrame(pattern, that)}, 1000);
     }
 
-    moveMosaic(pattern, row) {
-        this.row++;
-        if(this.row > this.numberOfDivistions) {
-            // this.moveMosaicInterval.inve
-            return
-        }
-        console.warn("moveMosaic! pattern, row =", pattern)
-        console.warn("moveMosaic! row =",  this.row)
-        let randomColor = Math.floor(Math.random() * this.colorPallet.length);
+    moveMosaic(pattern, frameIndex) {
+        // let frame = pattern.frames[frameIndex];
+        // // d3.selectAll(".mosaic").remove();
+        // let svg = d3.select('#animationSVG');
+        // for(let squareIdx of frame) {
+        //     let rectData = this.data[squareIdx];
 
-        d3.selectAll('.mosaic').remove();
+        //     // the square indexes dont match for the frames duh
+        //     let tile = d3.select("#mosaic"+squareIdx)
 
-        for(let squareIdx of pattern) {
-            let adjustedIdx = squareIdx+40*this.row;
-            setTimeout(() => {
-                let rect = this.data[adjustedIdx]
-                let svg = d3.select('#animationSVG')
-                svg.append('rect')
-                    .attr('class', 'mosaic')
-                    .attr("x", rect.x2)
-                    .attr("y", rect.y2)
-                    .attr("width", this.squareDim.width)
-                    .attr("height", this.squareDim.width)
-                    .attr('fill', 'black')
-
-            }, 50);
-        }
+        //     tile.attr("x", rectData.x2)
+        //         .attr("y", rectData.y2)
+        //     if(frameIndex) {
+        //         tile.style("opacity", 0.5)
+        //     } else {
+        //         tile.style("opacity", 1)
+        //     }
+        // }
     }
 
     passiveAnimation() {
@@ -223,22 +235,49 @@ class LoadAnimation extends React.Component {
         let colorPalletKeys = Object.keys(this.colorPallets)
         let randomColorPallet = Math.floor(Math.random() * colorPalletKeys.length);
         this.colorPallet = this.colorPallets[colorPalletKeys[randomColorPallet]];
-        console.warn("DEBUG colorPalletKeys =", colorPalletKeys)
-        console.warn("DEBUG this.colorPallet =", this.colorPallet)
         // setup SVG and begin drawing rectangles
         let svgDiv = document.getElementById("home-animation");
         this.svgWidth = 500;
         this.svgHeight = 500;
         let that = this;
+        // create svg
         let svg = d3.select(svgDiv).append("svg")
             .attr("id", "animationSVG")
             .attr("width", this.svgWidth)
             .attr("height", this.svgHeight)
 
+
+
+        //Container for the gradients
+        var defs = svg.append("defs");
+
+        //Filter for the outside glow
+        var filter = defs.append("filter")
+            .attr("id","glow");
+        filter.append("feGaussianBlur")
+            .attr("stdDeviation","3.5")
+            .attr("result","coloredBlur");
+        var feMerge = filter.append("feMerge");
+        feMerge.append("feMergeNode")
+            .attr("in","coloredBlur");
+        feMerge.append("feMergeNode")
+            .attr("in","SourceGraphic");
+
+
+
+
         this.generateDataPoints();
-        let pattern = this.patterns.space_invader;
-        this.drawMosaic(pattern, 0, true);
-        this.startMosaicAnimation(pattern)
+        // mosaic only when grid is size 40
+        // if(this.numberOfDivistions === 40) {
+            let pattern = this.patterns['space_invader_' + this.numberOfDivistions];
+            setTimeout(() => {
+                this.drawMosaic(pattern, 0, true);
+                this.startMosaicAnimation(pattern)
+             }, 200);
+        // }
+
+
+
         for(let idx in this.data) {
             setTimeout(() => {  this.drawRectangle(svg, idx) }, 10);
         }
@@ -273,6 +312,8 @@ class LoadAnimation extends React.Component {
             .style("opacity", 1)
             .attr("y", rect.y2)
             .attr("x", rect.x2)
+
+
     }
 
     render() {
