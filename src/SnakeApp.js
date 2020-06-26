@@ -1,6 +1,5 @@
 import * as d3 from "d3";
 
-
 function initKeyBindings () {
   document.addEventListener('keydown', (event) => {
     if(event.key === 'ArrowLeft' || event.key === 'ArrowUp' || event.key === 'ArrowRight' || event.key === 'ArrowDown') {
