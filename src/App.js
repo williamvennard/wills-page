@@ -14,7 +14,6 @@ import About from './About.js';
 import Footer from './Footer.js';
 import './App.css';
 
-console.log("Hello world this api key = ", process.env.REACT_APP_API_KEY)
 
 let backgroundStyle = {
   backgroundAttachment: 'fixed',
