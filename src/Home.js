@@ -1,4 +1,5 @@
 import React from "react"
+import {Link} from 'react-router-dom'; // Import the Link component
 import './App.css';
 import * as d3 from "d3";
 
@@ -11,64 +12,123 @@ class LoadAnimation extends React.Component {
         this.colorPallets = {
             'sunset': ['#264653', '#2A9D8F', '#E9C46A', '#F4A261', '#E76F51'],
             'blues': ['#7400B8', '#6930C3', '#5E60CE', '#5390D9', '#4EA8DE', '#48BFE3', '#56CFE1', '#64DFDF', '#72EFDD', '#80FFDB'],
-            'fire': ['#370617', '#6A040F', '#9D0208', '#D00000', '#DC2F02', '#E85D04', '#F48C06', '#FAA307', '#FFBA08'],
+            'fire': ['#6A040F', '#9D0208', '#D00000', '#DC2F02', '#E85D04', '#F48C06', '#FAA307', '#FFBA08'],
             'sunrise': ['#F94144', '#F3722C', '#F8961E', '#F9C74F', '#90BE6D', '#43AA8B', '#577590']
         }
         this.squareDim = {};
+        this.svgWidth = 500;
+        this.svgHeight = 500;
         this.numberOfDivistions = 30;
-        // only for this.numberOfDivistions = 40;
         this.patterns = {
-            'space_invader_40': {
-                'frames':[
-                    [657, 663,
-                    698, 702,
-                    737, 738, 739, 740, 741, 742, 743,
-                    776, 777, 779, 780, 781, 783, 784,
-                    815, 816, 817, 818, 819, 820, 821, 822, 823, 824, 825,
-                    855, 857, 858, 859, 860, 861, 862, 863, 865,
-                    895, 897, 903, 905,
-                    938, 939, 941, 942],
+          'heart_30': {
+            'frames':[
+              // row 1
+              [{idx: 342, fill: '#cd041c'}, {idx: 343, fill: '#cd041c'}, {idx: 347, fill: '#cd041c'}, {idx: 348, fill: '#cd041c'},
+              // row 2
+              {idx: 371, fill: '#cd041c'}, {idx: 372, fill: '#cd041c'}, {idx: 373, fill: '#cd041c'}, {idx: 374, fill: '#cd041c'},
+              {idx: 376, fill: '#cd041c'}, {idx: 377, fill: '#cd041c'}, {idx: 378, fill: '#cd041c'}, {idx: 379, fill: '#cd041c'},
+              //row 3
+              {idx: 400, fill: '#cd041c'}, {idx: 401, fill: '#cd041c'}, {idx: 402, fill: 'white'}, {idx: 403, fill: 'white'},
+              {idx: 404, fill: '#cd041c'}, {idx: 405, fill: '#cd041c'}, {idx: 406, fill: '#cd041c'}, {idx: 407, fill: '#cd041c'},
+              {idx: 408, fill: '#cd041c'}, {idx: 409, fill: '#cd041c'}, {idx: 410, fill: '#cd041c'},
+              // row 4
+              {idx: 430, fill: '#cd041c'}, {idx: 431, fill: '#cd041c'}, {idx: 432, fill: 'white'}, {idx: 433, fill: '#cd041c'},
+              {idx: 434, fill: '#cd041c'}, {idx: 435, fill: '#cd041c'}, {idx: 436, fill: '#cd041c'}, {idx: 437, fill: '#cd041c'},
+              {idx: 438, fill: '#cd041c'}, {idx: 439, fill: '#cd041c'}, {idx: 440, fill: '#cd041c'},
+              // row 5
+              {idx: 460, fill: '#cd041c'}, {idx: 461, fill: '#cd041c'}, {idx: 462, fill: '#cd041c'}, {idx: 463, fill: '#cd041c'},
+              {idx: 464, fill: '#cd041c'}, {idx: 465, fill: '#cd041c'}, {idx: 466, fill: '#cd041c'}, {idx: 467, fill: '#cd041c'},
+              {idx: 468, fill: '#cd041c'}, {idx: 469, fill: '#cd041c'}, {idx: 470, fill: '#cd041c'},
+              // row 6
+              {idx: 491, fill: '#cd041c'}, {idx: 492, fill: '#cd041c'}, {idx: 493, fill: '#cd041c'},
+              {idx: 494, fill: '#cd041c'}, {idx: 495, fill: '#cd041c'}, {idx: 496, fill: '#cd041c'}, {idx: 497, fill: '#cd041c'},
+              {idx: 498, fill: '#cd041c'}, {idx: 499, fill: '#cd041c'},
+              // row 7
+              {idx: 522, fill: '#cd041c'}, {idx: 523, fill: '#cd041c'}, {idx: 524, fill: '#cd041c'}, {idx: 525, fill: '#cd041c'},
+              {idx: 526, fill: '#cd041c'}, {idx: 527, fill: '#cd041c'}, {idx: 528, fill: '#cd041c'},
+              // row 8
+              {idx: 553, fill: '#cd041c'}, {idx: 554, fill: '#cd041c'}, {idx: 555, fill: '#cd041c'}, {idx: 556, fill: '#cd041c'},
+              {idx: 557, fill: '#cd041c'},
+              // row 9
+              {idx: 584, fill: '#cd041c'}, {idx: 585, fill: '#cd041c'}, {idx: 586, fill: '#cd041c'},
+              // row 10
+              {idx: 615, fill: '#cd041c'},],
 
-                    [657, 663,
-                    695, 698, 702, 705,
-                    735, 737, 738, 739, 740, 741, 742, 743, 745,
-                    775, 776, 777, 779, 780, 781, 783, 784, 785,
-                    815, 816, 817, 818, 819, 820, 821, 822, 823, 824, 825,
-                    856, 857, 858, 859, 860, 861, 862, 863, 864,
-                    897, 903,
-                    936, 944]
-                ]
-            },
-            'space_invader_30': {
-                'frames':[
-                    [342, 348,
-                    373, 377,
-                    402, 403, 404, 405, 406, 407, 408,
-                    431, 432, 434, 435, 436, 438, 439,
-                    460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 470,
-                    490, 492, 493, 494, 495, 496, 497, 498, 500,
-                    520, 522, 528, 530,
-                    553, 554, 556, 557],
+              // row 1
+              [{idx: 342, fill: '#cd041c'}, {idx: 343, fill: '#cd041c'}, {idx: 347, fill: '#cd041c'}, {idx: 348, fill: '#cd041c'},
+              // row 2
+              {idx: 371, fill: '#cd041c'}, {idx: 372, fill: '#cd041c'}, {idx: 373, fill: '#cd041c'}, {idx: 374, fill: '#cd041c'},
+              {idx: 376, fill: '#cd041c'}, {idx: 377, fill: '#cd041c'}, {idx: 378, fill: '#cd041c'}, {idx: 379, fill: '#cd041c'},
+              //row 3
+              {idx: 401, fill: '#cd041c'}, {idx: 402, fill: '#cd041c'}, {idx: 403, fill: 'white'},
+              {idx: 404, fill: '#cd041c'}, {idx: 405, fill: '#cd041c'}, {idx: 406, fill: '#cd041c'}, {idx: 407, fill: '#cd041c'},
+              {idx: 408, fill: '#cd041c'}, {idx: 409, fill: '#cd041c'},
+              // row 4
+              {idx: 431, fill: '#cd041c'}, {idx: 432, fill: '#cd041c'}, {idx: 433, fill: 'white'},
+              {idx: 434, fill: '#cd041c'}, {idx: 435, fill: '#cd041c'}, {idx: 436, fill: '#cd041c'}, {idx: 437, fill: '#cd041c'},
+              {idx: 438, fill: '#cd041c'}, {idx: 439, fill: '#cd041c'},
+              // row 5
+              {idx: 461, fill: '#cd041c'}, {idx: 462, fill: '#cd041c'}, {idx: 463, fill: '#cd041c'},
+              {idx: 464, fill: '#cd041c'}, {idx: 465, fill: '#cd041c'}, {idx: 466, fill: '#cd041c'}, {idx: 467, fill: '#cd041c'},
+              {idx: 468, fill: '#cd041c'}, {idx: 469, fill: '#cd041c'},
+              // row 6
+              {idx: 492, fill: '#cd041c'}, {idx: 493, fill: '#cd041c'},
+              {idx: 494, fill: '#cd041c'}, {idx: 495, fill: '#cd041c'}, {idx: 496, fill: '#cd041c'}, {idx: 497, fill: '#cd041c'},
+              {idx: 498, fill: '#cd041c'},
+              // row 7
+              {idx: 522, fill: '#cd041c'}, {idx: 523, fill: '#cd041c'}, {idx: 524, fill: '#cd041c'}, {idx: 525, fill: '#cd041c'},
+              {idx: 526, fill: '#cd041c'}, {idx: 527, fill: '#cd041c'}, {idx: 528, fill: '#cd041c'},
+              // row 8
+              {idx: 553, fill: '#cd041c'}, {idx: 554, fill: '#cd041c'}, {idx: 555, fill: '#cd041c'}, {idx: 556, fill: '#cd041c'},
+              {idx: 557, fill: '#cd041c'},
+              // row 9
+              {idx: 584, fill: '#cd041c'}, {idx: 585, fill: '#cd041c'}, {idx: 586, fill: '#cd041c'},
+              // row 10
+              {idx: 615, fill: '#cd041c'},],
+            ]
+          },
+          'space_invader_30': {
+            'frames':[
+              [342, 348,
+              373, 377,
+              402, 403, 404, 405, 406, 407, 408,
+              431, 432, 434, 435, 436, 438, 439,
+              460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 470,
+              490, 492, 493, 494, 495, 496, 497, 498, 500,
+              520, 522, 528, 530,
+              553, 554, 556, 557],
 
-                    [342, 348,
-                    370, 373, 377, 380,
-                    400, 402, 403, 404, 405, 406, 407, 408, 410,
-                    430, 431, 432, 434, 435, 436, 438, 439, 440,
-                    460, 461, 462, 463, 464,465, 466, 467, 468, 469, 470,
-                    491, 492, 493, 494, 495, 496, 497, 498, 499,
-                    522, 528,
-                    551, 559],
-                ]
-            }
+              [372, 378,
+              400, 403, 407, 410,
+              430, 432, 433, 434, 435, 436, 437, 438, 440,
+              460, 461, 462, 464, 465, 466, 468, 469, 470,
+              490, 491, 492, 493, 494,495, 496, 497, 498, 499, 500,
+              521, 522, 523, 524, 525, 526, 527, 528, 530,
+              552, 558,
+              581, 589],
+            ]
+          },
         }
 
-
+        this.passiveAnimationListener = undefined;
         // This binding is necessary to make `this` work in the callback
         this.passiveAnimation = this.passiveAnimation.bind(this);
     }
 
     componentDidMount() {
         this.startAnimation()
+        let that = this;
+        window.addEventListener('blur', function(){ that.pauseAnimation(that) });
+        window.addEventListener('focus', function(){ that.playAnimation(that) });
+    }
+
+    pauseAnimation(that) {
+        clearInterval(that.passiveAnimationListener);
+    }
+
+    playAnimation(that) {
+        clearInterval(that.passiveAnimationListener);
+        that.passiveAnimationListener = setInterval(that.passiveAnimation, 3000);
     }
 
     generateDataPoints() {
@@ -99,13 +159,13 @@ class LoadAnimation extends React.Component {
         let rect = d3.select("#rect" +i)
         rect.transition()
             .duration(500)
-            .style("opacity", random)
+            // .style("opacity", random)
             .attr("fill", this.colorPallet[randomColorIdx])
             .attr("x", this.data[i].x1)
             .attr("y", this.data[i].y1)
             .transition()
             .duration(1500)
-            .style("opacity", 1)
+            // .style("opacity", 1)
             .attr("x", this.data[i].x2)
             .attr("y", this.data[i].y2)
 
@@ -145,13 +205,18 @@ class LoadAnimation extends React.Component {
         d3.selectAll(".mosaic").remove();
         let frame = pattern.frames[frameIndex];
         let svg = d3.select('#animationSVG');
-        for(let squareIdx of frame) {
-            let rect = this.data[squareIdx];
+        for(let square of frame) {
+            let rect
+            let fillColor
+            if(typeof(square) === 'object') {
+              rect = this.data[square.idx];
+              fillColor = square.fill
+            } else {
+              rect = this.data[square];
+              fillColor = 'black';
+            }
             if(rect === undefined) {return}
             let random = Math.random();
-            // let rect = d3.select("#rect"+squareIdx).style("opacity", 1)
-            // rect.style("fill", "black")
-            //     .style("opacity", 0.5)
             if(onLoad) {
                 // setTimeout(() => {
                     svg.append('rect')
@@ -160,7 +225,7 @@ class LoadAnimation extends React.Component {
                         .attr("y", Math.floor(Math.random() * this.svgHeight))
                         .attr("width", this.squareDim.width)
                         .attr("height", this.squareDim.width)
-                        .attr('fill', 'black')
+                        .attr('fill', fillColor)
                         .style("opacity", 0)
                         .transition()
                         .duration(1000)
@@ -175,7 +240,7 @@ class LoadAnimation extends React.Component {
                     .attr("y", rect.y2)
                     .attr("width", this.squareDim.width)
                     .attr("height", this.squareDim.width)
-                    .attr('fill', 'black')
+                    .attr('fill', fillColor)
 
             }
 
@@ -195,97 +260,52 @@ class LoadAnimation extends React.Component {
         let intervalID = setInterval(function(){advancePatternFrame(pattern, that)}, 1000);
     }
 
-    moveMosaic(pattern, frameIndex) {
-        // let frame = pattern.frames[frameIndex];
-        // // d3.selectAll(".mosaic").remove();
-        // let svg = d3.select('#animationSVG');
-        // for(let squareIdx of frame) {
-        //     let rectData = this.data[squareIdx];
-
-        //     // the square indexes dont match for the frames duh
-        //     let tile = d3.select("#mosaic"+squareIdx)
-
-        //     tile.attr("x", rectData.x2)
-        //         .attr("y", rectData.y2)
-        //     if(frameIndex) {
-        //         tile.style("opacity", 0.5)
-        //     } else {
-        //         tile.style("opacity", 1)
-        //     }
-        // }
-    }
 
     passiveAnimation() {
-        let that = this;
-        for(let idx in this.data) {
-            let random = Math.random();
-            let rect = d3.select("#rect"+idx)
-            rect.transition()
-                .delay(1000*random)
-                .duration(1000)
-                .style("opacity", 0.8)
-                .transition()
-                .duration(1000)
-                .style("opacity", 1)
-        }
+        d3.selectAll(".animation-rect")
+            .transition()
+            .delay(function(d,i){ return 1000*Math.random() })
+            .duration(1000)
+            .style("opacity", 0.8)
+            .transition()
+            .duration(1200)
+            .style("opacity", 1)
     }
 
     startAnimation() {
         // set random color pallet
         let colorPalletKeys = Object.keys(this.colorPallets)
         let randomColorPallet = Math.floor(Math.random() * colorPalletKeys.length);
+
+        let patternKeys = Object.keys(this.patterns)
+        let randomAnimation = Math.floor(Math.random() * patternKeys.length);
+        let pattern = this.patterns[patternKeys[randomAnimation]];
+
         this.colorPallet = this.colorPallets[colorPalletKeys[randomColorPallet]];
         // setup SVG and begin drawing rectangles
         let svgDiv = document.getElementById("home-animation");
-        this.svgWidth = 500;
-        this.svgHeight = 500;
+
         let that = this;
         // create svg
         let svg = d3.select(svgDiv).append("svg")
             .attr("id", "animationSVG")
-            .attr("width", this.svgWidth)
-            .attr("height", this.svgHeight)
-
-
-
-        //Container for the gradients
-        var defs = svg.append("defs");
-
-        //Filter for the outside glow
-        var filter = defs.append("filter")
-            .attr("id","glow");
-        filter.append("feGaussianBlur")
-            .attr("stdDeviation","3.5")
-            .attr("result","coloredBlur");
-        var feMerge = filter.append("feMerge");
-        feMerge.append("feMergeNode")
-            .attr("in","coloredBlur");
-        feMerge.append("feMergeNode")
-            .attr("in","SourceGraphic");
-
-
-
+            .attr("viewBox", "0, 0," + this.svgWidth + "," + this.svgHeight)
 
         this.generateDataPoints();
-        // mosaic only when grid is size 40
-        // if(this.numberOfDivistions === 40) {
-            let pattern = this.patterns['space_invader_' + this.numberOfDivistions];
-            setTimeout(() => {
-                this.drawMosaic(pattern, 0, true);
-                this.startMosaicAnimation(pattern)
-             }, 200);
-        // }
 
 
-
+        setTimeout(() => {
+            this.drawMosaic(pattern, 0, true);
+            this.startMosaicAnimation(pattern)
+         }, 200);
+        clearInterval(this.passiveAnimationListener);
         for(let idx in this.data) {
-            setTimeout(() => {  this.drawRectangle(svg, idx) }, 10);
+            setTimeout(() => { this.drawRectangle(svg, idx) }, 10);
         }
 
+        // start passive animation
 
-        // // start passive animation
-        // let that = this;
-        // setTimeout(() => {  setInterval(that.passiveAnimation, 2500); }, 10*that.data.length);
+        setTimeout(() => { this.passiveAnimationListener = setInterval(this.passiveAnimation, 3000) }, 3000);
     }
 
     drawRectangle(svg, idx) {
@@ -303,8 +323,6 @@ class LoadAnimation extends React.Component {
             .attr("fill", this.colorPallet[randomColor])
             .text(idx)
             .style("opacity", 0)
-            .on("mouseover", function() { that.mouseoverAnimation(idx) })
-            // .on("mouseout", function() { that.mouseoutAnimation(idx) })
             .transition()
             .duration(1500)
             .attr("width", this.squareDim.width)
@@ -312,6 +330,18 @@ class LoadAnimation extends React.Component {
             .style("opacity", 1)
             .attr("y", rect.y2)
             .attr("x", rect.x2)
+
+        // Turned this off bc it conflicts with passive animation
+        // apply mouseover animation after initial draw animation
+        // if(+idx === this.data.length-1) {
+        //     setTimeout(() => {
+        //         for(let i in this.data) {
+        //             d3.select("#rect"+i)
+        //                 .on("mouseover", function() { that.mouseoverAnimation(i) })
+        //                 .on("mouseout", function() { that.mouseoutAnimation(idx) })
+        //         }
+        //     }, 1500);
+        // }
 
 
     }
@@ -323,17 +353,18 @@ class LoadAnimation extends React.Component {
     }
 }
 
-
 function Home(props) {
   return (
   	<div className="container-fluid">
-        <LoadAnimation/>
-	    <div className="col-6 home-section">
-	      <h1>William Vennard</h1>
-	      <h2>Web Developer & Mechanical Engineer</h2>
+      <LoadAnimation/>
+	    <div className="home-section">
+	      <h2>Web Designer & Developer</h2>
+        <h4>Turning complex problems into simple and elegant solutions.</h4>
 	    </div>
 	    <div className="contact-btn">
-	    	<button className="btn btn-outline-light">Contact Me</button>
+        <Link to="/contact">
+          <button className="btn btn-outline-light">Contact Me</button>
+        </Link>
 	    </div>
     </div>
   )

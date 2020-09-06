@@ -49,18 +49,18 @@ function Snake(props) {
 	      	<h1>Snake</h1>
 		      <div id="game-space">
 		      	<svg id="board" width="300px" height="300px">
-		      		<text className="game-intro" 
-		      					dx="150px" 
+		      		<text className="game-intro"
+		      					dx="150px"
 		      					dy="5em">
 		      			Use the arrow keys,
 		      		</text>
-		      		<text className="game-intro" 
-		      					dx="150px" 
+		      		<text className="game-intro"
+		      					dx="150px"
 		      					dy="7em">
 		      			eat green apples,
 		      		</text>
-		      		<text className="game-intro" 
-		      			  	dx="150px" 
+		      		<text className="game-intro"
+		      			  	dx="150px"
 		      					dy="9em">
 		      			and avoid the bombs!!
 		      		</text>
@@ -84,5 +84,5 @@ function Snake(props) {
     </div>
   )
 }
- 
+
 export default Snake;

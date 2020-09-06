@@ -1,14 +1,17 @@
 import React from 'react'; // Import the Component component from React
 import {Link} from 'react-router-dom'; // Import the Link component
+import IconBadge from './IconBadge.js';
 import './App.css';
 
 function OrderedList(props) {
   const list = props.list;
   const listItems = list.map((item) =>
-    <li key={item.toString()}>{ item }</li>
+    <li key={item.toString()}>
+      <IconBadge devTool={item.toString()}/>
+    </li>
   );
   return (
-    <ul>{ listItems }</ul>
+    <ul className="tools-list">{ listItems }</ul>
   );
 }
 
@@ -19,19 +22,32 @@ class Content extends React.Component {
 
   render() {
     return (
-      <div className="row">
-        <div className="col-4">
+      <div className="row text-container">
+        <div className="col-xs-12 col-sm-6">
           <div className="project-title"><h4>{this.props.title}</h4></div>
           <p>{this.props.description}</p>
-          <p> Tools Used: </p>
-          <OrderedList list={ this.props.tools } />,
+          <SourceLink props={ this.props }/>
+          <p> Built with: </p>
+          <OrderedList list={ this.props.tools } />
         </div>
-        <div className="col-8">
+        <div className="col-xs-12 col-sm-6">
           <Thumbnail props={ this.props }/>
         </div>
-
       </div>
     );
+  }
+}
+
+function SourceLink(props) {
+  if(props.props.sourceLink) {
+    return (
+      <div>
+        <a href={props.props.sourceLink}>View Source</a>
+      </div>
+
+    )
+  } else {
+    return null
   }
 }
 
