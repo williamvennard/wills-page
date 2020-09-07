@@ -1,13 +1,10 @@
 import React from "react"
 import IconBadge from './IconBadge.js';
 import {Link} from 'react-router-dom'; // Import the Link component
-// import { Document } from 'react-pdf';
-import { Document, Page, pdfjs } from "react-pdf";
-
+import { Document } from 'react-pdf';
 
 import './App.css';
 
-// pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 function About(props) {
   return (
     <div className="container-fluid about-container">
@@ -18,7 +15,7 @@ function About(props) {
     	<div className="row">
     		<div className="col-8 text-container">
 			    <p>
-            I'm currently a Web Developer at <a href="https://www.gradientone.com/">GradientOne</a>, where I have worked for the last 5 years.
+            Hi, my name is William Vennard, I'm currently a Web Developer at <a href="https://www.gradientone.com/">GradientOne</a>, where I have worked for the last 5 years.
             I specialize in UX/UI design and implementation and enjoy doing data visualization and animations.
           </p>
 
@@ -52,8 +49,9 @@ function About(props) {
             <Document file="./wvResume2020.pdf" />
           </div>
           <p>
-            Interested in working together or simply have questions?
+            Interested in working together or simply have questions? You can
           </p>
+
           <Link to="/contact">
             <button className="btn btn-outline-light">Contact Me</button>
           </Link>
