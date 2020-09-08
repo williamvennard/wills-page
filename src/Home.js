@@ -361,11 +361,6 @@ function Home(props) {
 	      <h2>Web Designer & Developer</h2>
         <h4>Turning complex problems into simple and elegant solutions.</h4>
 	    </div>
-	    <div className="contact-btn">
-        <Link to="/contact">
-          <button className="btn btn-outline-light">Contact Me</button>
-        </Link>
-	    </div>
     </div>
   )
 }

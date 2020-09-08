@@ -1,8 +1,6 @@
 import React from "react"
 import IconBadge from './IconBadge.js';
 import {Link} from 'react-router-dom'; // Import the Link component
-import { Document } from 'react-pdf';
-
 import './App.css';
 
 function About(props) {
@@ -14,8 +12,9 @@ function About(props) {
       </div>
     	<div className="row">
     		<div className="col-8 text-container">
+          <h4>Hi, my name is William Vennard,</h4>
 			    <p>
-            Hi, my name is William Vennard, I'm currently a Web Developer at <a href="https://www.gradientone.com/">GradientOne</a>, where I have worked for the last 5 years.
+            I'm currently a Web Developer at <a href="https://www.gradientone.com/">GradientOne</a>, where I have worked for the last 5 years.
             I specialize in UX/UI design and implementation and enjoy doing data visualization and animations.
           </p>
 
@@ -45,16 +44,11 @@ function About(props) {
 				  </ul>
 
           <div className="col-8">
-            Resume:
-            <Document file="./wvResume2020.pdf" />
+            Click <a href="/wvResume2020.pdf">here</a> to view my resume.
           </div>
           <p>
             Interested in working together or simply have questions? You can
           </p>
-
-          <Link to="/contact">
-            <button className="btn btn-outline-light">Contact Me</button>
-          </Link>
 		    </div>
 	    </div>
     </div>

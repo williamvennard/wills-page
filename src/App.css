@@ -88,16 +88,6 @@ h2 {
   width: fit-content;
 }
 
-.contact-btn {
-  margin: 2em;
-  text-align: center;
-}
-
-#contact-form {
-  padding-top: 1em;
-  width: 45%;
-  margin: auto;
-}
 
 #home-animation {
   width: 30%;
@@ -230,9 +220,6 @@ h2 {
     padding: 11px 10px 11px 10px;
   }
 
-  #contact-form {
-    width: 100%;
-  }
   .project-image img{
     padding: 1em;
   }

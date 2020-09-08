@@ -6,7 +6,6 @@ import { HashRouter, Route, Link } from 'react-router-dom';
 import ScrollableAnchor from 'react-scrollable-anchor';
 
 import Home from './Home.js';
-import Contact from './Contact.js';
 import Projects from './Projects.js';
 import Snake from './Snake.js';
 import Planit from './Planit.js';
@@ -75,7 +74,6 @@ function App() {
 
         <Route path="/snake"  component={ Snake } />
         <Route path="/planit"  component={ Planit } />
-        <Route path="/contact"  component={ Contact } />
         <Route exact path="/"  component={ MainContent } />
 
         <Footer></Footer>
