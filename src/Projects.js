@@ -33,8 +33,10 @@ function Projects(props) {
 			  		title="Interactive D3 Plot for GradientOne"
 			  		externalLink = "true"
 			  		tools={ ['D3', 'Angular', 'JS'] }
-			  		description="Oscilloscope data plotted using D3.
-                                 Features include dynamic zoom, auto reduction, markers, and much more."
+			  		description="Real Oscilloscope data plotted using D3.
+                         Features include dynamic zoom, auto reduction, markers, and much more."
+            descriptionLong="These plots were a key feature of GradientOne which allows users to remotely
+                             fetch data from their lab equipment and interact with it in the web UI."
 					/>
 		    </div>
 		    <div className="col-12 projects-row">
@@ -45,7 +47,9 @@ function Projects(props) {
 			  		title="Maps Project"
 			  		externalLink = "false"
 			  		tools={ ['Google Maps', 'React', 'JS'] }
-			  		description="Basic travel planing application demonstating react-google-maps and the Google Maps API."
+			  		description="Basic application demonstrating react-google-maps and the Google Maps API."
+            descriptionLong="The goal for this project was to get familiar with using APIs and
+                             eventually build a travel planning application."
 					/>
 		    </div>
 		    <div className="col-12 projects-row">
@@ -57,6 +61,8 @@ function Projects(props) {
 			  		externalLink = "false"
 			  		tools={ ['D3', 'JS'] }
 			  		description="The classic arcade game you know and love. Plus bombs!"
+            descriptionLong="This game was created using only JS and D3.
+                             It was a fun coding challenge to recreate one of my favorite arcade games from childhood."
 					/>
 		    </div>
 		  </div>

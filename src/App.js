@@ -10,6 +10,7 @@ import Projects from './Projects.js';
 import Snake from './Snake.js';
 import Planit from './Planit.js';
 import About from './About.js';
+import Contact from './Contact.js';
 import Footer from './Footer.js';
 import './App.css';
 
@@ -33,6 +34,11 @@ function MainContent() {
       <ScrollableAnchor id={'/#about'}>
         <div>
           <About/>
+        </div>
+      </ScrollableAnchor>
+      <ScrollableAnchor id={'/#contact'}>
+        <div>
+          <Contact/>
         </div>
       </ScrollableAnchor>
     </div>

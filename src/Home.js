@@ -274,6 +274,7 @@ class LoadAnimation extends React.Component {
 
     startAnimation() {
         // set random color pallet
+        d3.selectAll(".mosaic").remove();
         let colorPalletKeys = Object.keys(this.colorPallets)
         let randomColorPallet = Math.floor(Math.random() * colorPalletKeys.length);
 
@@ -293,18 +294,16 @@ class LoadAnimation extends React.Component {
 
         this.generateDataPoints();
 
-
         setTimeout(() => {
             this.drawMosaic(pattern, 0, true);
             this.startMosaicAnimation(pattern)
-         }, 200);
+         }, 250);
         clearInterval(this.passiveAnimationListener);
         for(let idx in this.data) {
             setTimeout(() => { this.drawRectangle(svg, idx) }, 10);
         }
 
         // start passive animation
-
         setTimeout(() => { this.passiveAnimationListener = setInterval(this.passiveAnimation, 3000) }, 3000);
     }
 
@@ -355,7 +354,7 @@ class LoadAnimation extends React.Component {
 
 function Home(props) {
   return (
-  	<div className="container-fluid">
+  	<div className="container-fluid home-container">
       <LoadAnimation/>
 	    <div className="home-section">
 	      <h2>Web Designer & Developer</h2>

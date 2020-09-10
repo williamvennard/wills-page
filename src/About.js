@@ -1,7 +1,9 @@
 import React from "react"
 import IconBadge from './IconBadge.js';
 import {Link} from 'react-router-dom'; // Import the Link component
+import pictureOfMe from './images/about_me_photo.png';
 import './App.css';
+
 
 function About(props) {
   return (
@@ -11,12 +13,16 @@ function About(props) {
         <h2>About Me</h2>
       </div>
     	<div className="row">
-    		<div className="col-8 text-container">
-          <h4>Hi, my name is William Vennard,</h4>
-			    <p>
-            I'm currently a Web Developer at <a href="https://www.gradientone.com/">GradientOne</a>, where I have worked for the last 5 years.
+    		<div className="col-lg-6 col-sm-12 text-container">
+          <h4>Hi, my name is William Vennard</h4>
+          <p>
+            I'm currently a Web Developer at <a href="https://www.gradientone.com/">GradientOne</a>, where I have worked for the past 5 years.
             I specialize in UX/UI design and implementation and enjoy doing data visualization and animations.
+
+            I currently live and work remotely in Lake Tahoe, California, where I enjoy to ski in the winter and rock climb in the summer.
           </p>
+
+          <p>Click <a href="/wvResume2020.pdf">here</a> to view my resume.</p>
 
 			    <p>Some of the tools I like to use and are most familar with are</p>
 			    <ul className="tools-list">
@@ -43,13 +49,11 @@ function About(props) {
             </li>
 				  </ul>
 
-          <div className="col-8">
-            Click <a href="/wvResume2020.pdf">here</a> to view my resume.
-          </div>
-          <p>
-            Interested in working together or simply have questions? You can
-          </p>
+
 		    </div>
+        <div className="col-lg-6 col-sm-12">
+          <img id="my-photo" src={pictureOfMe} alt="its me"/>
+        </div>
 	    </div>
     </div>
   )

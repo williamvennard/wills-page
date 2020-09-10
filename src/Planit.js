@@ -24,6 +24,7 @@ const PlacesWithStandaloneSearchBox = compose(
   }),
   lifecycle({
     componentWillMount() {
+      window.scrollTo(0, 0);
       const refs = {};
       this.showPosition = (position) => {
         const places = [];
@@ -89,7 +90,8 @@ const PlacesWithStandaloneSearchBox = compose(
           boxShadow: `0 2px 6px rgba(0, 0, 0, 0.3)`,
           fontSize: `14px`,
           outline: `none`,
-          textOverflow: `ellipses`
+          textOverflow: `ellipses`,
+          margin: `1em 0 2em 0`
         }}
       />
     </StandaloneSearchBox>
@@ -110,13 +112,7 @@ const PlacesWithStandaloneSearchBox = compose(
 
 ));
 
-
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
-
-const containerStyles = {
-  width: '100%',
-};
-
 
 export class MapContainer extends Component {
   state = {
@@ -143,10 +139,9 @@ export class MapContainer extends Component {
 
   render() {
     return (
-      <div className="container-fluid" style={containerStyles}>
-        <div className="row" style={{display: 'none'}}>
-          <div className="col-2"></div>
-          <div className="col-8">
+      <div className="container-fluid planit-container">
+        <div className="row">
+          <div className="col-12">
             <h2> Planit - The best way to plan your next adventure. </h2>
             <p>
               Plan a trip from a, b, c and decide how long you want to spend in each spot
@@ -157,8 +152,7 @@ export class MapContainer extends Component {
           </div>
         </div>
         <div className="row">
-          <div className="col-2"></div>
-          <div className="col-8">
+          <div className="col-12">
             <PlacesWithStandaloneSearchBox/>
           </div>
         </div>

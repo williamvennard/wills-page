@@ -25,7 +25,7 @@ h2 {
   background-color: #2E2532;
 }
 
-.container-fluid {
+.home-container {
   min-height: 100vh;
 }
 
@@ -35,6 +35,22 @@ h2 {
 
 .about-container {
   background-color: #2e2e2e;
+}
+
+#my-photo {
+  width: 100%;
+}
+
+.contact-container {
+  background: #217e9b;
+}
+
+.contact-row {
+  text-align: center;
+}
+
+#my-email {
+  cursor: pointer;
 }
 
 .tools-list {
@@ -133,19 +149,25 @@ h2 {
 }
 
 .snake-container {
+  min-height: 100vh;
   color: black;
   text-align: center;
   background-color: #e5e5e5;
 }
 
 .snake-container h1 {
-  padding-top: 20px;
+  padding-top: 4em;
 }
 
 #pause-game {
   display: none;
 }
 /*END SNAKE GAME CSS*/
+
+.planit-container {
+  padding: 2em;
+  min-height: 100vh;
+}
 
 .footer {
   position: relative;
@@ -159,7 +181,8 @@ h2 {
 }
 
 #copyright {
-  text-align: right;
+  position: absolute;
+  right: 0.5em;
   font-size: 80%;
   color: #808080;
   margin: 10px 10px 0 10px;
@@ -187,10 +210,23 @@ h2 {
   background: #cccccc;
 }
 
-.project-image img{
-  width: 100%;
+.project-image {
   padding: 3em;
+}
+
+.project-image img{
+  width: 75%;
   margin: auto;
+}
+
+.project-image img:hover {
+  opacity: 25%;
+}
+
+.click-to-view {
+  display: none;
+  position: absolute;
+  margin:auto;
 }
 
 @media only screen and (max-width: 600px) {
@@ -220,7 +256,11 @@ h2 {
     padding: 11px 10px 11px 10px;
   }
 
-  .project-image img{
+  .project-image {
     padding: 1em;
   }
+  .project-image img{
+    width: 100%;
+  }
+
 }

@@ -26,11 +26,12 @@ class Content extends React.Component {
         <div className="col-xs-12 col-sm-6">
           <div className="project-title"><h4>{this.props.title}</h4></div>
           <p>{this.props.description}</p>
+          <p>{this.props.descriptionLong}</p>
           <SourceLink props={ this.props }/>
-          <p> Built with: </p>
           <OrderedList list={ this.props.tools } />
         </div>
         <div className="col-xs-12 col-sm-6">
+          <span className="click-to-view">click to view</span>
           <Thumbnail props={ this.props }/>
         </div>
       </div>
@@ -56,22 +57,21 @@ function Thumbnail(props) {
   if(props.props.externalLink === "true") {
     return (
       <div className="project">
-        <a href={props.props.link}>
-          <div className="project-image">
+        <div className="project-image">
+          <a href={props.props.link}>
             <img src={props.props.image} alt="Project Thumbnail"/>
-          </div>
-        </a>
+          </a>
+        </div>
       </div>
     );
   } else {
     return (
       <div className="project">
-        <Link to={props.props.link}>
-          <div className="project-image">
+        <div className="project-image">
+          <Link to={props.props.link}>
             <img src={props.props.image} alt="Project Thumbnail"/>
-          </div>
-
-        </Link>
+          </Link>
+        </div>
       </div>
     );
   }
